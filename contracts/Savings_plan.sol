@@ -47,7 +47,7 @@ contract SavingsPlan{
 
         if(success){
             plan.withdrawn = true;
-        };
+        }
 
         require(success, 'Withdrawal not succesful');
 
