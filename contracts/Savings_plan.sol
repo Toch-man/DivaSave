@@ -25,13 +25,13 @@ contract SavingsPlan{
 
         require(success, 'transaction not succesful');
 
-        userSavings[msg.sender].push(Savings{
+        userSavings[msg.sender].push(Savings({
             amount:amount,
             unlockTime:block.timestamp + (lock_days * 1 days),
             token:token,
             withdrawn:false,
-            goalName: goalName
-        });
+            goalName:goalName
+        }));
 
         emit Saving_created(msg.sender,amount,lock_days,goalName);
     }
